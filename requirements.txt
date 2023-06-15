@@ -1,5 +1,5 @@
 streamlit==0.60.0
-cv2
+opencv-python
 numpy
 Pillow
 base64
