@@ -1,5 +1,5 @@
 streamlit==0.60.0
-opencv-python
+opencv-python-headless
 numpy
 Pillow
 keras
