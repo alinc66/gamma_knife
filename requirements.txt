@@ -1,0 +1,6 @@
+streamlit==0.60.0
+cv2
+numpy
+Pillow
+base64
+keras
