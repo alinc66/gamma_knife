@@ -2,5 +2,4 @@ streamlit==0.60.0
 opencv-python
 numpy
 Pillow
-base64
 keras
