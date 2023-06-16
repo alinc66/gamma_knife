@@ -2,24 +2,12 @@ import streamlit as st
 import cv2
 import numpy as np
 import base64
-import requests
 from PIL import Image
 from keras.applications.vgg19 import preprocess_input
 from keras.optimizers import Adam
 from keras.applications.vgg19 import VGG19
 from keras.layers import Dense, Dropout, Flatten
 from keras.models import Model
-
-# Replace 'YOUR_GOOGLE_DRIVE_LINK' with the direct download link of the weights file
-file_url = 'https://drive.google.com/file/d/1zeVZFSHsuY9jDbgN0BbplPiSzcD-DFfq/view?usp=drive_link'
-
-# Replace 'weights_file_name' with the desired name of the weights file
-weights_file_name = 'tune_model19.weights.best_2'
-
-# Download the weights file
-response = requests.get(file_url)
-with open(tune_model19.weights.best_2, 'wb') as file:
-    file.write(response.content)
 
 st.markdown('<h1 style="color:black;">AI imaging prognostic factors in the evolution of stage-treated metastases using Gamma Knife</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies image into following categories:</h2>', unsafe_allow_html=True)
