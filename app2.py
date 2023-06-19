@@ -18,7 +18,7 @@ st.markdown('<h3 style="color:gray;"> tumor regression - class 1, tumor progress
 
 # background image to streamlit
 
-#@st.cache_data()
+@st.cache_data()
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
