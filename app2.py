@@ -3,12 +3,13 @@ import cv2
 import numpy as np
 import base64
 import h5py
+import tensorflow as tf
 from PIL import Image
-from keras.applications.vgg19 import preprocess_input
-from keras.optimizers import Adam
-from keras.applications.vgg19 import VGG19
-from keras.layers import Dense, Dropout, Flatten
-from keras.models import Model
+from tf.keras.applications.vgg19 import preprocess_input
+from tf.keras.optimizers import Adam
+from tf.keras.applications.vgg19 import VGG19
+from tf.keras.layers import Dense, Dropout, Flatten
+from tf.keras.models import Model
 
 st.markdown('<h1 style="color:black;">AI imaging prognostic factors in the evolution of stage-treated metastases using Gamma Knife</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies image into following categories:</h2>', unsafe_allow_html=True)
