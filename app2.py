@@ -10,6 +10,10 @@ from keras.optimizers import Adam
 from keras.applications.vgg19 import VGG19
 from keras.layers import Dense, Dropout, Flatten
 from keras.models import Model
+import subprocess
+
+if not os.path.isfile('tune_model19.weights.best_2.hdf5'):
+    subprocess.run(['curl --output tune_model19.weights.best_2.hdf5 "https://media.githubusercontent.com/media/ShyamaleeT/glaucocare/main/sep_5.h5"'], shell=True)
 
 st.markdown('<h1 style="color:black;">AI imaging prognostic factors in the evolution of stage-treated metastases using Gamma Knife</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies image into following categories:</h2>', unsafe_allow_html=True)
