@@ -11,6 +11,7 @@ from keras.applications.vgg19 import VGG19
 from keras.layers import Dense, Dropout, Flatten
 from keras.models import Model
 import subprocess
+import os
 
 if not os.path.isfile('tune_model19.weights.best_2.hdf5'):
     subprocess.run(['curl --output tune_model19.weights.best_2.hdf5 "https://media.githubusercontent.com/media/ShyamaleeT/glaucocare/main/sep_5.h5"'], shell=True)
