@@ -2,7 +2,6 @@ import streamlit as st
 import cv2
 import numpy as np
 import base64
-import h5py
 from PIL import Image
 from keras.applications.vgg19 import preprocess_input
 from keras.optimizers import Adam
@@ -10,6 +9,10 @@ from keras.applications.vgg19 import VGG19
 from keras.layers import Dense, Dropout, Flatten
 from keras.models import Model
 
+import subprocess
+if not os.path.isfile('model.hdf5'):
+    subprocess.run(['curl --output model.hdf5 "https://media.githubusercontent.com/media/alincbuz/gamma_knife/main/tune_model19.weights.best_2.hdf5"'], shell=True)
+    
 st.markdown('<h1 style="color:black;">AI imaging prognostic factors in the evolution of stage-treated metastases using Gamma Knife</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies image into following categories:</h2>', unsafe_allow_html=True)
 st.markdown('<h3 style="color:gray;"> tumor regression - class 1, tumor progression - class 0 </h3>', unsafe_allow_html=True)
@@ -116,7 +119,7 @@ if upload is not None:
     optim_1 = Adam(learning_rate=0.0001)
     n_classes = 2
     vgg_model = model(input_shape, n_classes, optim_1, fine_tune=2)
-    vgg_model.load_weights('tune_model19.weights.best_2.hdf5')
+    vgg_model.load_weights('model.hdf5')
 
     # prediction on model
     vgg_preds = vgg_model.predict(img)
